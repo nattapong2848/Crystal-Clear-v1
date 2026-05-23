@@ -1,11 +1,9 @@
-// Crystal Clear Back Office Config
-// 1) Deploy apps-script/Code.gs as Google Apps Script Web App.
-// 2) Put the Web App URL below.
-// 3) If API_URL is empty, the website runs in Demo Local Mode using browser localStorage.
-window.CRYSTAL_CONFIG = {
-  API_URL: "",
-  STORE_NAME: "Crystal Clear",
-  HN_PREFIX: "HN",
-  ORDER_PREFIX: "CC",
-  CURRENCY: "THB"
+window.CC_CONFIG = {
+  // ใส่ Google Apps Script Web App URL หลัง Deploy เช่น https://script.google.com/macros/s/xxxx/exec
+  API_URL: '',
+  // Google Sheet ที่สร้างไว้
+  SHEET_URL: 'https://docs.google.com/spreadsheets/d/1x00ZZweul36bYY7ofIeBDt66E29UZvpDXBHJobFNCDQ/edit',
+  ADMIN_USERNAME: 'admin',
+  ADMIN_PASSWORD: '1234',
+  BRAND_NAME: 'Crystal Clear'
 };
