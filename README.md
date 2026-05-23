@@ -1,57 +1,48 @@
-# Crystal Clear Operation Status Site
+# Crystal Clear Ultra Status System
 
-เว็บใหม่แบบไม่รก เน้น Operation อย่างเดียว:
+เวอร์ชั่นเต็ม กราฟฟิกลูกเล่นจัดเต็ม แต่ยังเน้น Operation ใช้งานจริง
 
-1. ลูกค้าเช็คสถานะได้ด้วย HN + PIN
-2. ร้านเพิ่มเคสใหม่ได้
-3. ร้านอัปเดตสถานะได้
-4. ข้อมูลเก็บใน Google Sheet
+## มีอะไรบ้าง
 
-## Google Sheet ที่สร้างให้แล้ว
+- ลูกค้าเช็คสถานะด้วย HN + PIN
+- Timeline สถานะสวย ๆ
+- หลังบ้านด้วย Admin PIN
+- Dashboard งานค้าง
+- เพิ่มเคส
+- แก้ไขเคสเต็ม
+- Kanban Board
+- ค้นหา/กรองสถานะ
+- ใส่เลขพัสดุและ Tracking URL
+- ซ่อนเคส
+- โลโก้ฝังในหน้าเว็บ ไม่ต้องใช้ assets
+- ไม่ใช้ config.js แล้ว เพื่อตัดปัญหา API URL ไม่อัปเดต
+
+## ไฟล์ที่ต้องอัปขึ้น GitHub
+
+- index.html
+- style.css
+- app.js
+- README.md
+
+## Google Apps Script
+
+เอาไฟล์นี้ไปวางใน Apps Script:
+
+- apps-script/Code.gs
+
+จากนั้นกด Deploy ใหม่ หรือ Manage deployments > Edit > New version
+
+## API URL ที่ใส่ใน app.js แล้ว
+
+https://script.google.com/macros/s/AKfycbx8o0Fb7XvANoagptA795gdYhvbnsVC4sYNoxsSEP6HpaHFPEKgh1_GMe5AYgyrBZNgsA/exec
+
+## Google Sheet
 
 https://docs.google.com/spreadsheets/d/1d7e3a7KlDN_czftMrT6byGiDyaxLLDLUwSqBKlWrqUo/edit
 
-## วิธีอัปขึ้น GitHub Pages
+## ข้อมูลทดสอบ
 
-1. สร้าง Repository ใหม่ เช่น `crystal-clear-status`
-2. อัปโหลดไฟล์:
-   - index.html
-   - style.css
-   - app.js
-   - config.js
-   - apps-script/Code.gs
-3. ไปที่ Settings > Pages
-4. Source เลือก Deploy from a branch
-5. Branch เลือก main / root
-6. รอลิงก์เว็บ
+HN: HN-2605-0001  
+PIN: 1234
 
-## วิธีต่อ Google Sheet
-
-1. เปิด Google Sheet ที่สร้างให้
-2. ไปที่ Extensions > Apps Script
-3. วางโค้ดจาก `apps-script/Code.gs`
-4. Deploy > New deployment > Web app
-5. Execute as: Me
-6. Who has access: Anyone
-7. Copy Web App URL
-8. เปิดไฟล์ `config.js`
-9. ใส่ URL แบบนี้:
-
-```js
-window.API_URL = "https://script.google.com/macros/s/xxxx/exec";
-```
-
-10. อัปไฟล์ config.js กลับขึ้น GitHub
-
-## วิธีให้ลูกค้าเช็ค
-
-ส่งให้ลูกค้า:
-- ลิงก์เว็บ
-- HN เช่น HN-2605-0001
-- PIN เช่น 1234
-
-## Admin PIN
-
-ค่าเริ่มต้นคือ `2468`
-
-เปลี่ยนได้ที่ Google Sheet > Settings > adminPin
+Admin PIN: 2468
